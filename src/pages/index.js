@@ -11,4 +11,5 @@ export {default as Login} from "./Login";
 export {default as Profile} from "./Profile";
 export {default as Register} from "./Register";
 export {default as Stats} from "./Stats";
-// export {default as AnotherLanding} from "./AnotherLending";
+export {default as AnotherLanding} from "./AnotherLending";
+export {default as AnotherRegister} from "./AnotherRegister.jsx";

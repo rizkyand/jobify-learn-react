@@ -13,8 +13,12 @@ import {
     Avatar,
     AvatarGroup,
     useBreakpointValue,
-    Icon,
+    Icon, Image,
 } from '@chakra-ui/react'
+import Logo from "../component/Logo.jsx";
+import main from "../assets/images/main.svg";
+import logo from "../assets/images/logo.svg";
+
 
 const avatars = [
     {
@@ -49,13 +53,13 @@ const Blur = (props) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             {...props}>
-            <circle cx="71" cy="61" r="111" fill="#F56565" />
-            <circle cx="244" cy="106" r="139" fill="#ED64A6" />
-            <circle cy="291" r="139" fill="#ED64A6" />
-            <circle cx="80.5" cy="189.5" r="101.5" fill="#ED8936" />
-            <circle cx="196.5" cy="317.5" r="101.5" fill="#ECC94B" />
-            <circle cx="70.5" cy="458.5" r="101.5" fill="#48BB78" />
-            <circle cx="426.5" cy="-0.5" r="101.5" fill="#4299E1" />
+            <circle cx="71" cy="61" r="111" fill="#0984e3" />
+            <circle cx="244" cy="106" r="139" fill="#00b894" />
+            <circle cy="291" r="139" fill="#6c5ce7" />
+            <circle cx="80.5" cy="189.5" r="101.5" fill="#fdcb6e" />
+            <circle cx="196.5" cy="317.5" r="101.5" fill="#dfe6e9" />
+            <circle cx="70.5" cy="458.5" r="101.5" fill="#a29bfe" />
+            <circle cx="426.5" cy="-0.5" r="101.5" fill="#81ecec" />
         </Icon>
     )
 }
@@ -73,11 +77,11 @@ export default function JoinOurTeam() {
                     <Heading
                         lineHeight={1.1}
                         fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}>
-                        Senior web designers{' '}
-                        <Text as={'span'} bgGradient="linear(to-r, red.400,pink.400)" bgClip="text">
-                            &
+                        Find your best{' '}
+                        <Text as={'span'} bgColor='#2cb1bc' bgClip="text">
+                            JOB
                         </Text>{' '}
-                        Full-Stack Developers
+                        with Us
                     </Heading>
                     <Stack direction={'row'} spacing={4} align={'center'}>
                         <AvatarGroup>
@@ -142,18 +146,27 @@ export default function JoinOurTeam() {
                     spacing={{ base: 8 }}
                     maxW={{ lg: 'lg' }}>
                     <Stack spacing={4}>
+                        <Image
+                            alt={'Login Image'}
+                            objectFit={'cover'}
+                            src={
+                                logo
+                            }
+                            justifyContent={"flex-start"}
+                        />
                         <Heading
                             color={'gray.800'}
                             lineHeight={1.1}
-                            fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
-                            Join our team
+                            fontSize={"2xl"}
+                            paddingTop="10">
+                            Come Join Us
                             <Text as={'span'} bgGradient="linear(to-r, red.400,pink.400)" bgClip="text">
                                 !
                             </Text>
                         </Heading>
                         <Text color={'gray.500'} fontSize={{ base: 'sm', sm: 'md' }}>
-                            We’re looking for amazing engineers just like you! Become a part of our
-                            rockstar engineering team and skyrocket your career!
+                            Empowering Careers, Unleashing Potential
+                            Navigate Your Future in the World of Web Jobs
                         </Text>
                     </Stack>
                     <Box as={'form'} mt={10}>
@@ -166,6 +179,17 @@ export default function JoinOurTeam() {
                                 _placeholder={{
                                     color: 'gray.500',
                                 }}
+                                type="text"
+                            />
+                            <Input
+                                placeholder="Lastname"
+                                bg={'gray.100'}
+                                border={0}
+                                color={'gray.500'}
+                                _placeholder={{
+                                    color: 'gray.500',
+                                }}
+                                type="text"
                             />
                             <Input
                                 placeholder="firstname@lastname.io"
@@ -175,9 +199,10 @@ export default function JoinOurTeam() {
                                 _placeholder={{
                                     color: 'gray.500',
                                 }}
+                                type="email"
                             />
                             <Input
-                                placeholder="+1 (___) __-___-___"
+                                placeholder="your phone number"
                                 bg={'gray.100'}
                                 border={0}
                                 color={'gray.500'}
@@ -185,18 +210,21 @@ export default function JoinOurTeam() {
                                     color: 'gray.500',
                                 }}
                             />
-                            <Button fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}>
-                                Upload CV
+                            <Button fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}
+                                    _hover={{
+                                        bgColor: '#2cb1bc'
+                                    }}>
+                                Upload Your CV
                             </Button>
                         </Stack>
                         <Button
                             fontFamily={'heading'}
                             mt={8}
                             w={'full'}
-                            bgGradient="linear(to-r, red.400,pink.400)"
+                            bgColor="#2cb1bc"
                             color={'white'}
                             _hover={{
-                                bgGradient: 'linear(to-r, red.400,pink.400)',
+                                bgColor: '#238d95',
                                 boxShadow: 'xl',
                             }}>
                             Submit
@@ -205,7 +233,7 @@ export default function JoinOurTeam() {
                     form
                 </Stack>
             </Container>
-            <Blur position={'absolute'} top={-10} left={-10} style={{ filter: 'blur(70px)' }} />
+            <Blur position={'absolute'} top={-10} left={-10} style={{ filter: 'blur(100px)' }} />
         </Box>
     )
 }

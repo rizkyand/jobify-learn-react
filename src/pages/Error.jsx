@@ -1,16 +1,39 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+'use client'
+
+import {Box, Heading, Text, Button, Flex} from '@chakra-ui/react';
+import {Link} from "react-router-dom";
 
 
-function Error() {
-    const err = 'It seems like the page you are looking for is not Found, Sorry!';
+export default function Error() {
     return (
-        <div>
-            <h1>Error Pages</h1>
-            <p>{err}</p>
-            <Link to="/">Back To Home</Link>
-        </div>
-    );
-}
+        <Flex p={8} flex={"auto"} align={'center'} justify={'center'}>
+            <Box textAlign="center" py={10} px={6}>
+                <Heading
+                    display="inline-block"
+                    as="h2"
+                    size="2xl"
+                    bgGradient="linear(to-r, teal.400, teal.600)"
+                    backgroundClip="text">
+                    404
+                </Heading>
+                <Text fontSize="18px" mt={3} mb={2}>
+                    Page Not Found
+                </Text>
+                <Text color={'gray.500'} mb={6}>
+                    The page you&apos;re looking for does not seem to exist
+                </Text>
+                <Link to='/'>
+                    <Button
+                        colorScheme="teal"
+                        bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
+                        color="white"
+                        variant="solid">
+                        Go to Home
+                    </Button>
+                </Link>
 
-export default Error;
+            </Box>
+        </Flex>
+
+    )
+}

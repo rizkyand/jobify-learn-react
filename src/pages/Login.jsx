@@ -13,6 +13,7 @@ import {
     Image,
 } from '@chakra-ui/react';
 import logins from '../assets/images/login-img.jpg';
+import {Link} from "react-router-dom";
 
 export default function Login() {
     return (
@@ -39,6 +40,15 @@ export default function Login() {
                         <Button colorScheme={'blue'} variant={'solid'}>
                             Sign in
                         </Button>
+                        <Flex  justifyContent={'center'}>
+                            <Heading fontSize={'small'}>
+                                Don't have an Account?
+                            </Heading>
+                        </Flex>
+                        <Link to='/register' color={'#2cb1bc'}>
+                                Register
+                        </Link>
+
                     </Stack>
                 </Stack>
             </Flex>

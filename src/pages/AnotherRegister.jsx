@@ -16,8 +16,9 @@ import {
     Icon, Image,
 } from '@chakra-ui/react'
 import Logo from "../component/Logo.jsx";
-import main from "../assets/images/main.svg";
+import signlogo from "../assets/images/sign-up-log.svg";
 import logo from "../assets/images/logo.svg";
+import {Link} from "react-router-dom";
 
 
 const avatars = [
@@ -83,6 +84,13 @@ export default function JoinOurTeam() {
                         </Text>{' '}
                         with Us
                     </Heading>
+                    <Image
+                        alt={'Login Image'}
+                        objectFit={'fill'}
+                        src={
+                            signlogo
+                        }
+                    />
                     <Stack direction={'row'} spacing={4} align={'center'}>
                         <AvatarGroup>
                             {avatars.map((avatar) => (
@@ -146,14 +154,25 @@ export default function JoinOurTeam() {
                     spacing={{ base: 8 }}
                     maxW={{ lg: 'lg' }}>
                     <Stack spacing={4}>
-                        <Image
-                            alt={'Login Image'}
-                            objectFit={'cover'}
-                            src={
-                                logo
-                            }
-                            justifyContent={"flex-start"}
-                        />
+                        <Link to='/'
+                        style={{objectFit : 'fill', justifyContent: 'flex-end'}}>
+                            <Image
+                                alt={'Login Image'}
+                                objectFit={'fill'}
+                                src={
+                                    logo
+                                }
+                                justifyContent={"flex-start"}
+                            />
+                        </Link>
+                        {/*<Image*/}
+                        {/*    alt={'Login Image'}*/}
+                        {/*    objectFit={'fill'}*/}
+                        {/*    src={*/}
+                        {/*        logo*/}
+                        {/*    }*/}
+                        {/*    justifyContent={"flex-start"}*/}
+                        {/*/>*/}
                         <Heading
                             color={'gray.800'}
                             lineHeight={1.1}
@@ -180,6 +199,7 @@ export default function JoinOurTeam() {
                                     color: 'gray.500',
                                 }}
                                 type="text"
+                                required
                             />
                             <Input
                                 placeholder="Lastname"
@@ -200,6 +220,7 @@ export default function JoinOurTeam() {
                                     color: 'gray.500',
                                 }}
                                 type="email"
+                                required
                             />
                             <Input
                                 placeholder="your phone number"
@@ -209,6 +230,18 @@ export default function JoinOurTeam() {
                                 _placeholder={{
                                     color: 'gray.500',
                                 }}
+                            />
+
+                            <Input
+                                placeholder="your strong passwod"
+                                bg={'gray.100'}
+                                border={0}
+                                color={'gray.500'}
+                                _placeholder={{
+                                    color: 'gray.500',
+                                }}
+                                type="password"
+                                required
                             />
                             <Button fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}
                                     _hover={{

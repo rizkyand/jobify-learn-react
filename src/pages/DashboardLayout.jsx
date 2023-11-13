@@ -9,11 +9,11 @@ function DashboardLayout(props) {
     const [showSideBar, setShowSetBar] = useState(false);
     const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-    const toogleSideBar = () => {
+    const toggleSideBar = () => {
         setShowSetBar(!showSideBar);
-        console.log(!showSideBar);
+        console.log(showSideBar);
     }
-    const toogleDarkTheme = () => {
+    const toggleDarkTheme = () => {
         setIsDarkTheme(!isDarkTheme);
     }
 
@@ -27,8 +27,8 @@ function DashboardLayout(props) {
                 {userDummy,
                 showSideBar,
                 isDarkTheme,
-                toogleDarkTheme,
-                toogleSideBar,
+                toggleDarkTheme,
+                toggleSideBar,
                 isUserLogout}}>
         <Wrapper>
             <main className="dashboard">

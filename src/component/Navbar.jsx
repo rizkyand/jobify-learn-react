@@ -10,11 +10,11 @@ import {useDashboardContext} from "../pages/DashboardLayout.jsx";
 
 
 const Navbar = () => {
-    const {toogleSideBar} = useDashboardContext();
+    const {toggleSideBar} = useDashboardContext();
     return (
         <Wrapper>
             <div className="nav-center">
-                <button type='button' className='toogle-btn' onClick={toogleSideBar}>
+                <button type='button' className='toggle-btn' onClick={toggleSideBar}>
                     <TbLayoutSidebarLeftExpandFilled/>
                 </button>
                 <div>

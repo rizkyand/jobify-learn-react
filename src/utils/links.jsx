@@ -36,43 +36,44 @@ const links = [
     },
 ];
 
-// const Links = ()=>{
-//     const links = [
-//         {
-//             text : 'add job',
-//             path : '.',
-//             icon : <FaWpforms/>
-//         },
-//         {
-//             text : 'all job',
-//             path : 'all-job',
-//             icon : <MdQueryStats/>
-//         },
-//         {
-//             text : 'stats',
-//             path : 'stats',
-//             icon : <IoBarChartSharp/>
-//         },
-//         {
-//             text : 'profile',
-//             path : 'profile',
-//             icon : <ImProfile/>
-//         },
-//         {
-//             text : 'admin',
-//             path : 'admin',
-//             icon : <MdAdminPanelSettings/>
-//         },
-//     ];
-//     links.forEach(link => {
-//         const {text, path, icon} = link;
-//         return (
-//             <NavLink to={path} key={text} className="nav-links">
-//                 <span>{icon}</span>{text}
-//             </NavLink>
-//         );
-//     })
-// };
+const Links = ()=>{
+    const links = [
+        {
+            text : 'add job',
+            path : '.',
+            icon : <FaWpforms/>
+        },
+        {
+            text : 'all job',
+            path : 'all-job',
+            icon : <MdQueryStats/>
+        },
+        {
+            text : 'stats',
+            path : 'stats',
+            icon : <IoBarChartSharp/>
+        },
+        {
+            text : 'profile',
+            path : 'profile',
+            icon : <ImProfile/>
+        },
+        {
+            text : 'admin',
+            path : 'admin',
+            icon : <MdAdminPanelSettings/>
+        },
+    ];
+    let strNav = '';
+    links.forEach(link => {
+        const {text, path, icon} = link;
+        strNav += <NavLink to={path} key={text} className="nav-links">
+                <span>{icon}</span>{text}
+            </NavLink>
+        ;
+    });
+    return strNav;
+};
 
-// export default links;
+//export default Links;
 export  default  links;

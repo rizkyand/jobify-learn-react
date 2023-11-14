@@ -23,9 +23,12 @@ const Wrapper = styled.div`
     visibility: hidden;
     border-radius: var(--border-radius);
     background: var(--primary-500);
+    transform: translateY(-100%);
+    transition: var(--transition);
   }
   .show-dropdown {
     visibility: visible;
+    transform: translateY(0);
   }
   .dropdown-btn {
     border-radius: var(--border-radius);

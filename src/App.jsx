@@ -2,7 +2,6 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {HomeLayout, Register, Login, DashboarLayout, Landing, Error, AnotherLanding, AnotherRegister
         ,Admin, AllJob, AddJob, EditJob, Profile, Stats} from './pages';
 
-
 const router = createBrowserRouter([
   {
     path: '/',

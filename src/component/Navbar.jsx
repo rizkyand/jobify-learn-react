@@ -7,6 +7,7 @@ import {TbLayoutSidebarLeftExpandFilled} from "react-icons/tb";
 import Logo from "./Logo.jsx";
 import logo from "../assets/images/logo.svg";
 import {useDashboardContext} from "../pages/DashboardLayout.jsx";
+import {LogoutContainer, ThemeButton} from "./index.js";
 
 
 const Navbar = () => {
@@ -21,8 +22,11 @@ const Navbar = () => {
                     <Logo/>
                     <h4 className="logo-text">Dashboard</h4>
                 </div>
-                <div className='btn-container'>logout
+                <div className='btn-container'>
+                    <ThemeButton/>
+                    <LogoutContainer/>
                 </div>
+
             </div>
         </Wrapper>
     );

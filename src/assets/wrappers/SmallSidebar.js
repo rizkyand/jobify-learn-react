@@ -1,37 +1,68 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.aside`
-  @media (min-width: 992px) {
+  @media (min-width: 992px) {  //hide global change to big sidebar
     display: none;
   }
+  
+  @media(min-width: 320px){ //mobile
+    .content{
+      width: var(--fluid-width);
+      align-items: center;
+    }
+    .sidebar-container{
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  @media(min-width: 450px){ //web small
+    .content{
+      width: 50%;
+      align-items: flex-start;
+    }
+    .sidebar-container{
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+  
+  
   .sidebar-container {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.7);
     display: flex;
-    justify-content: center;
     align-items: center;
     z-index: -1;
     opacity: 0;
     transition: var(--transition);
+    transform: translateX(-100%);
     visibility: hidden;
   }
   .show-sidebar {
     z-index: 99;
     opacity: 1;
     visibility: visible;
+    transform:  translateX(0);
   }
   .content {
     background: var(--background-secondary-color);
-    width: var(--fluid-width);
+    //background: #94a3b8;
     height: 95vh;
-    border-radius: var(--border-radius);
+    border-radius: 20px;
     padding: 4rem 2rem;
     position: relative;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    //transition: var(--transition);
+    //transform: translateX(-100%);
   }
+  
+  //.show-sidebar .content{
+  //  transform: translateX(0);
+  //}
+  
   .close-btn {
     position: absolute;
     top: 10px;
@@ -67,5 +98,6 @@ const Wrapper = styled.aside`
   .active {
     color: var(--primary-500);
   }
+  
 `;
 export default Wrapper;

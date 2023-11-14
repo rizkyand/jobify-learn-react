@@ -4,17 +4,18 @@ import {Navbar, SmallSideBar, BigSideBar} from "../component/index.js";
 import Wrapper from "../assets/wrappers/Dashboard.js";
 
 const DashBoardContext = createContext();
-function DashboardLayout(props) {
-    const userDummy = {name : 'Rizky'};
+
+function DashboardLayout() {
+    const userDummy = {name : 'Ananda'};
     const [showSideBar, setShowSetBar] = useState(false);
     const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-    const toogleSideBar = () => {
+    const toggleSideBar = () => {
         setShowSetBar(!showSideBar);
-        console.log(!showSideBar);
     }
-    const toogleDarkTheme = () => {
-        setIsDarkTheme(!isDarkTheme);
+    const toggleDarkTheme = () => {
+        const theDarkTheme = !isDarkTheme;
+        setIsDarkTheme(theDarkTheme);
     }
 
     const isUserLogout = () => {
@@ -27,8 +28,8 @@ function DashboardLayout(props) {
                 {userDummy,
                 showSideBar,
                 isDarkTheme,
-                toogleDarkTheme,
-                toogleSideBar,
+                toggleDarkTheme,
+                toggleSideBar,
                 isUserLogout}}>
         <Wrapper>
             <main className="dashboard">
